@@ -14,6 +14,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="/styles/dark.css">
 		<style>
 			#form-div {
 				background-color:rgba(72,72,72,0.1);
@@ -26,10 +27,6 @@
 				border-radius: 7px;
 				-moz-border-radius: 7px;
 				-webkit-border-radius: 7px;
-			}
-			.form-control[readonly] {
-				background-color:#ffffff !important;
-				opacity:1
 			}
 			textarea {
 				width: 100%;

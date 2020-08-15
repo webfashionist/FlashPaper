@@ -1,0 +1,147 @@
+ @media screen{
+     html{
+         background-color:#181a1b!important;
+    }
+     html,body,textarea,select,button{
+         background-color:#181a1b;
+    }
+     html,body,textarea,select,button{
+         border-color:#736b5e;
+         color:#e8e6e3;
+    }
+     a{
+         color:#3391ff;
+    }
+     ::placeholder{
+         color:#b2aba1;
+    }
+     ::selection{
+         background-color:#004daa!important;
+         color:#e8e6e3!important;
+    }
+     ::-moz-selection{
+         background-color:#004daa!important;
+         color:#e8e6e3!important;
+    }
+}
+ @media screen{
+     html{
+         -webkit-tap-highlight-color:transparent;
+    }
+     body{
+         color:rgb(209, 205, 199);
+         background-color:rgb(24, 26, 27);
+    }
+     a{
+         color:rgb(51, 162, 255);
+         text-decoration-color:initial;
+         background-color:transparent;
+    }
+     a:hover{
+         color:rgb(97, 183, 255);
+         text-decoration-color:initial;
+    }
+     button:focus{
+         outline-color:rgb(186, 123, 0);
+    }
+     fieldset{
+         border-color:initial;
+    }
+     .form-control{
+         color:rgb(181, 175, 166);
+         background-color:rgb(24, 26, 27);
+         border-color:rgb(60, 65, 68);
+    }
+     .form-control[readonly]{
+         color:rgb(181, 175, 166) !important; //text color
+         background-color:rgb(24, 26, 27) !important;
+         border-color:rgb(60, 65, 68) !important;
+    }
+     .form-control:focus{
+         color:rgb(181, 175, 166);
+         background-color:rgb(24, 26, 27);
+         border-color:rgb(0, 67, 140);
+         outline-color:initial;
+         box-shadow:rgba(0, 98, 204, 0.25) 0px 0px 0px 0.2rem;
+    }
+     .form-control::-webkit-input-placeholder{
+         color:rgb(158, 150, 137);
+    }
+     .form-control::placeholder{
+         color:rgb(158, 150, 137);
+    }
+     .btn{
+         color:rgb(209, 205, 199);
+         background-color:transparent;
+         border-color:transparent;
+    }
+     .btn:hover{
+         color:rgb(209, 205, 199);
+         text-decoration-color:initial;
+    }
+     .btn:focus{
+         outline-color:initial;
+         box-shadow:rgba(0, 98, 204, 0.25) 0px 0px 0px 0.2rem;
+    }
+     .btn-primary{
+         color:rgb(232, 230, 227);
+         background-color:rgb(0, 98, 204);
+         border-color:rgb(0, 86, 179);
+    }
+     .btn-primary:hover{
+         color:rgb(232, 230, 227);
+         background-color:rgb(0, 84, 174);
+         border-color:rgb(0, 93, 194);
+    }
+     .btn-primary:focus{
+         color:rgb(232, 230, 227);
+         background-color:rgb(0, 84, 174);
+         border-color:rgb(0, 93, 194);
+         box-shadow:rgba(0, 88, 181, 0.5) 0px 0px 0px 0.2rem;
+    }
+     .btn-primary:disabled{
+         color:rgb(232, 230, 227);
+         background-color:rgb(0, 98, 204);
+         border-color:rgb(0, 86, 179);
+    }
+     .custom-select{
+         color:rgb(181, 175, 166);
+         background-image:url(blob:https://flashpaper.io/b6de328a-fbe6-488a-9fee-51f5d3a92aa6);
+         background-color:rgb(24, 26, 27);
+         border-color:rgb(60, 65, 68);
+    }
+     .custom-select:focus{
+         border-color:rgb(0, 67, 140);
+         outline-color:initial;
+         box-shadow:rgba(0, 98, 204, 0.25) 0px 0px 0px 0.2rem;
+    }
+     .custom-select:disabled{
+         color:rgb(158, 150, 137);
+         background-color:rgb(35, 38, 39);
+    }
+     .text-muted{
+         color:rgb(158, 150, 137)!important;
+    }
+}
+ #form-div{
+     background-color:rgba(72,72,72,0.1);
+     margin:10px;
+     border:0;
+}
+ @media screen{
+     #form-div{
+         background-color:rgba(54, 59, 61, 0.1);
+    }
+     textarea{
+         border-color:rgb(62, 68, 70);
+         background-color:rgb(28, 30, 31);
+    }
+     fieldset{
+         border-color:initial;
+    }
+}
+ @media screen{
+     ::placeholder{
+         opacity:0.5!important;
+    }
+}
