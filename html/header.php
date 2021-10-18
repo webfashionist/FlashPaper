@@ -31,6 +31,26 @@
 				background-color:#ffffff !important;
 				opacity:1
 			}
+            .form-select {
+                cursor: pointer;
+            }
+            .btn.btn-copy {
+                margin: 0;
+                padding: 0;
+                cursor: pointer;
+                text-align: center;
+                line-height: 0;
+                height: 38px;
+                width: 40px;
+
+                -webkit-border-top-left-radius: 0;
+                -moz-border-radius-topleft: 0;
+                border-top-left-radius: 0;
+
+                -webkit-border-bottom-left-radius: 0;
+                -moz-border-radius-bottomleft: 0;
+                border-bottom-left-radius: 0;
+            }
 			textarea {
 				width: 100%;
 				height: 200px;
