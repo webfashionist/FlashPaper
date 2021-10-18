@@ -11,7 +11,7 @@
 							<textarea class="form-control" id="secret" name="secret" rows="8" maxlength="<?php echo $settings['max_secret_length'] ?>" style="resize: vertical;" placeholder="Secret text..."><?php echo $template_text ?></textarea>
 						</div>
 					</div>
-					<div class="form-group row float-right" style='padding-top: 3%'>
+					<div class="form-group row float-end" style='padding-top: 3%'>
 						<div class="col">
 							<select id="select" name="select" class="custom-select" onChange="window.location.href=this.value">
 								<option value="" selected disabled hidden>-- Select Template</option>
@@ -27,7 +27,7 @@
 							</select>
 						</div>
 					</div>
-					<div class="form-group row float-left" style='padding-top: 3%'>
+					<div class="form-group row float-start" style='padding-top: 3%'>
 						<div class="col">
 							<button name="submit" type="submit" class="btn btn-primary"><?php echo $settings['messages']['submit_secret_button'] ?></button>
 						</div>
