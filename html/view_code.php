@@ -3,8 +3,8 @@
 			<fieldset>
 				<div>
 					<label style="font-family: 'Enriqueta', arial, serif; line-height: 1.25; margin: 0 0 10px; font-size: 30px; font-weight: bold;"><?php echo $settings['messages']['view_code_header'] ?? ""; ?></label>
-					<div style="font-style: italic">
-						<label style="font-family: 'Enriqueta', arial, serif; line-height: 1.25; margin: 0 0 10px; font-size: 15px; font-weight: bold;"><?php echo $settings['messages']['view_code_subheader'] ?? ""; ?></label>
+                    <div class="alert alert-info" role="alert">
+						<?php echo $settings['messages']['view_code_subheader'] ?? ""; ?>
 					</div>
 					<div style="margin-top:10px">
                         <input type="text" class="form-control float-start" name="secret" id="secret" value="<?php echo $message ?? ""; ?>" readonly><button onclick="moveSecretToClipboard(this)" class="btn btn-primary btn-copy float-end"><img src="./svg/clipboard-plus.svg" alt="Copy & Paste"></button>
