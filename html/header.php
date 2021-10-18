@@ -36,8 +36,10 @@
 			}
 			.form-control[readonly] {
 				background-color:#ffffff !important;
-                width: calc(100% - 40px);
 				opacity: 1;
+			}
+            input.form-control[readonly] {
+                width: calc(100% - 40px);
                 -webkit-border-top-right-radius: 0;
                 -moz-border-radius-topright: 0;
                 border-top-right-radius: 0;
@@ -45,7 +47,7 @@
                 -webkit-border-bottom-right-radius: 0;
                 -moz-border-radius-bottomright: 0;
                 border-bottom-right-radius: 0;
-			}
+            }
             .form-select {
                 cursor: pointer;
             }
