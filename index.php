@@ -34,7 +34,7 @@
 
 		$template_text = '';
 		if ( !empty($_GET['t']) ) {
-			$safe_path = 'templates/' . basename($_GET['t']) . '.txt';
+			$safe_path = 'templates/' . basename(filter_input(INPUT_GET,"t", FILTER_SANITIZE_STRING)) . '.txt';
 			if ( file_exists($safe_path) ) { $template_text = file_get_contents($safe_path); }
 		}
 		require_once('html/submit_secret.php');
