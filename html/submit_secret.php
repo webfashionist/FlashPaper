@@ -1,5 +1,5 @@
 <?php #defined('_DIRECT_ACCESS_CHECK') or exit(); ?>
-		<div id="form-div">
+		<div id="form-div" class="container mx-auto">
 			<form class="form-horizontal" action="" method="POST">
 				<fieldset>
 					<div>

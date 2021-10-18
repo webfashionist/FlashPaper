@@ -1,5 +1,5 @@
 <?php defined('_DIRECT_ACCESS_CHECK') or exit(); ?>
-		<div id="form-div">
+		<div id="form-div" class="container mx-auto"
 			<fieldset>
 				<div>
 					<label style="font-family: 'Enriqueta', arial, serif; line-height: 1.25; margin: 0 0 10px; font-size: 30px; font-weight: bold;"><?php echo $settings['messages']['view_code_header'] ?? ""; ?></label>
