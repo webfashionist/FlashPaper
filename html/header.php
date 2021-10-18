@@ -15,8 +15,11 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="./css/bootstrap_5.1.3.min.css" integrity="sha256-YvdLHPgkqJ8DVUxjjnGVlMMJtNimJ6dYkowFFvp4kKs=" crossorigin="anonymous">
 		<style>
+            body {
+                background-color: #EFEFEF;
+            }
 			#form-div {
-				background-color:rgba(72,72,72,0.1);
+				background-color: #FFFFFF;
 				padding-left:35px;
 				padding-right:35px;
 				padding-top:35px;
@@ -26,10 +29,22 @@
 				border-radius: 7px;
 				-moz-border-radius: 7px;
 				-webkit-border-radius: 7px;
+
+                -moz-box-shadow: 0 0 30px rgb(0 0 0 / 20%);
+                -webkit-box-shadow: 0 0 30px rgb(0 0 0 / 20%);
+                box-shadow: 0 0 30px rgb(0 0 0 / 20%);
 			}
 			.form-control[readonly] {
 				background-color:#ffffff !important;
-				opacity:1
+                width: calc(100% - 40px);
+				opacity: 1;
+                -webkit-border-top-right-radius: 0;
+                -moz-border-radius-topright: 0;
+                border-top-right-radius: 0;
+
+                -webkit-border-bottom-right-radius: 0;
+                -moz-border-radius-bottomright: 0;
+                border-bottom-right-radius: 0;
 			}
             .form-select {
                 cursor: pointer;
