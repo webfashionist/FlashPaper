@@ -134,6 +134,44 @@ function base64_decode_mod($input) {
 	return base64_decode(strtr($input, '-_#', '+/='));
 }
 
+function store_secret_simple($secret) {
+    #connect to sqlite db
+    $db = connect();
+
+    $words = json_decode(file_get_contents(__DIR__."/../words.json"), true);
+
+    #generate random id, iv, key
+    $id = implode("-", array_map(function($index) use($words) {
+        return $words[$index];
+    }, array_rand($words, 2)));
+    $iv = random_str(16);
+    $key = implode("-", array_map(function($index) use($words) {
+        return $words[$index];
+    }, array_rand($words, 3)));
+
+    $k = $id . "_" . $key;
+
+    #generate hash of id + key
+    $hash = password_hash($id . $key, PASSWORD_BCRYPT);
+
+    #encrypt text with key and then static key
+    $secret = encrypt_decrypt(true, $key, $iv, $secret);
+    $secret = encrypt_decrypt(true, getStaticKey(), $iv, $secret);
+
+    #base64 encode the id, iv, and secret for db storage
+    $id = base64_encode_mod($id);
+    $iv = base64_encode_mod($iv);
+    $secret = base64_encode_mod($secret);
+
+    #write secret_hash, iv, and secret to database
+    writeSecret($db, $id, $iv, $hash, $secret);
+
+    #close db
+    $db = null;
+
+    return $k;
+}
+
 function store_secret($secret) {
 	#connect to sqlite db
 	$db = connect();
@@ -166,6 +204,54 @@ function store_secret($secret) {
 
 	#return base64(id + key)
 	return $k;
+}
+
+function retrieve_secret_simple($k) {
+
+    #connect to sqlite db
+    $db = connect();
+
+    #k must contain "_"
+    if ( ! strpos($k, "_")) {
+        throw new Exception('This secret can not be found!');
+    }
+
+    #extract key and id from k. base64 encode id
+    list($id, $key) = explode("_", $k);
+    $idBase64 = base64_encode_mod($id);
+
+    #look up secret by id
+    $secretQuery = readSecret($db, $idBase64);
+
+    #throw exception if query failed
+    if ( ! $secretQuery ) {
+        throw new Exception('This secret can not be found!');
+    }
+
+    $iv = base64_decode_mod($secretQuery['iv']);
+    $hash = $secretQuery['hash'];
+    $secret = base64_decode_mod($secretQuery['secret']);
+
+    #verify hash from DB equals hash of id + key from URL
+    if ( ! password_verify($id . $key, $hash) ) {
+        throw new Exception('This secret can not be found!');
+    }
+
+    #decrypt secret with the static key, and then with url key
+    $secret = encrypt_decrypt(false, getStaticKey(), $iv, $secret);
+    $secret = encrypt_decrypt(false, $key, $iv, $secret);
+
+    #delete secret and verify it's gone
+    if ( ! deleteSecret($db, $idBase64) ) {
+        # if we cant destroy it, dont give the secret out
+        throw new Exception('Failed to destroy secret!');
+    }
+
+    #close db
+    $db = null;
+
+    #return decrypted text
+    return $secret;
 }
 
 function retrieve_secret($k) {
