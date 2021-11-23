@@ -26,6 +26,9 @@
 								?>
 							</select>
 						</div>
+						<div class="col" style="margin-top: 10px;">
+                            <input type="checkbox" name="easy" /> Easy secret
+						</div>
 					</div>
 					<div class="form-group row float-start" style='padding-top: 3%'>
 						<div class="col">
